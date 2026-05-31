@@ -10,13 +10,13 @@ class Settings(BaseSettings):
     DATABASE_NAME: str = "portfolio_db"
     
     # JWT Configuration
-    SECRET_KEY: str
+    SECRET_KEY: str = "d26ca0da9131a47738f7f2b1c41b8a5365f5761a6b484553" # Default for quick start
     ALGORITHM: str = "HS256"
     ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
     
     # Admin Credentials
-    ADMIN_EMAIL: str
-    ADMIN_PASSWORD: str
+    ADMIN_EMAIL: str = "admin@example.com"
+    ADMIN_PASSWORD: str = "admin123"
     
     # CORS Configuration
     ALLOWED_ORIGINS: str = "http://localhost:3000"

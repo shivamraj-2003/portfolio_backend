@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     ADMIN_PASSWORD: str = "admin123"
     
     # CORS Configuration
-    ALLOWED_ORIGINS: str = "http://localhost:3000"
+    ALLOWED_ORIGINS: str = "http://localhost:3000,https://shivamin-portfolio.netlify.app"
     
     # Environment
     ENVIRONMENT: str = "development"

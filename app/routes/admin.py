@@ -79,6 +79,7 @@ async def get_analytics(current_admin: dict = Depends(get_current_admin)):
                 id=str(v["_id"]),
                 section=v["section"],
                 device=v["device"],
+                visitor_name=v.get("visitor_name", "Anonymous"),
                 ip_address=v.get("ip_address", "unknown"),
                 created_at=v["created_at"]
             ))

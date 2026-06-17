@@ -41,6 +41,7 @@ class VisitLogResponse(BaseModel):
     id: str
     section: str
     device: str
+    visitor_name: str
     ip_address: str
     created_at: datetime
 

@@ -26,8 +26,9 @@ class Analytics(BaseModel):
     """Analytics model for tracking section visits"""
     
     id: Optional[PyObjectId] = Field(default=None, alias="_id")
-    section: Literal["about", "projects", "experience", "contact"]
+    section: Literal["home", "about", "projects", "experience", "contact"]
     device: Literal["desktop", "mobile"]
+    visitor_name: Optional[str] = "Anonymous"
     ip_address: Optional[str] = None
     created_at: datetime = Field(default_factory=datetime.utcnow)
     
@@ -39,6 +40,7 @@ class Analytics(BaseModel):
             "example": {
                 "section": "projects",
                 "device": "desktop",
+                "visitor_name": "John Doe",
                 "ip_address": "192.168.1.1",
                 "created_at": "2024-01-01T00:00:00"
             }

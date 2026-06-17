@@ -1,17 +1,18 @@
 from pydantic import BaseModel, field_validator
-from typing import Literal
+from typing import Literal, Optional
 
 
 class AnalyticsRequest(BaseModel):
     """Analytics tracking request schema"""
     
-    section: Literal["about", "projects", "experience", "contact"]
+    section: Literal["home", "about", "projects", "experience", "contact"]
     device: Literal["desktop", "mobile"]
+    visitor_name: Optional[str] = "Anonymous"
     
     @field_validator('section')
     @classmethod
     def validate_section(cls, v):
-        allowed_sections = ["about", "projects", "experience", "contact"]
+        allowed_sections = ["home", "about", "projects", "experience", "contact"]
         if v not in allowed_sections:
             raise ValueError(f'Section must be one of: {", ".join(allowed_sections)}')
         return v
@@ -28,7 +29,8 @@ class AnalyticsRequest(BaseModel):
         json_schema_extra = {
             "example": {
                 "section": "projects",
-                "device": "desktop"
+                "device": "desktop",
+                "visitor_name": "John Doe"
             }
         }
 

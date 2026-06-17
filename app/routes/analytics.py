@@ -43,6 +43,7 @@ async def track_section_visit(analytics: AnalyticsRequest, request: Request):
         analytics_data = Analytics(
             section=analytics.section,
             device=analytics.device,
+            visitor_name=analytics.visitor_name,
             ip_address=ip_address,
             created_at=datetime.utcnow()
         )
